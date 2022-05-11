@@ -36,6 +36,24 @@
         //Integer包装类型的数值和int基本数据类型的数值进行比较时
         //会自动拆为int，然后进行比较，实际上就变为两个int类型的数值的比较
         
+        //拆箱的范围[-128,127]
+        //即在范围内 Integer和Integer用==比较 return true
+        //在范围外 return false
+        Integer j = -128;
+        Integer j1 = -128;
+        System.out.println (j==j1);// true
+        
+        Integer j = 127;
+        Integer j1 = 127;
+        System.out.println (j==j1);// true
+        
+        Integer j = 200;
+        Integer j1 = 200;
+        System.out.println (j==j1);// false
+        
+        //Integer i5 = 数值;时，会被翻译成Integer i5 = Integer.valueOf(数值);
+        //Integer执行valueOf()方法时，会对-128到127之间的数进行缓存
+        //Integer i = 127时，会将127进行缓存，下次再写Integer i2 = 127时，就会直接从缓存中取，就不会new一个新对象
     }
 
 
