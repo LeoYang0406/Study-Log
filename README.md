@@ -1,4 +1,4 @@
-# equals/== 区别
+# 数据类型，equals/== 区别，字符串常量池
 
 ### 两种数据类型：
     a. 基本数据类型（byte, short, int, long, double, float, boolean, char）
@@ -17,16 +17,25 @@
      public static void main(String[] args){
         String str = "Hello World";
         String str1 = "Hello World";
-        // 字符串常量池
+        
+        //创建字符串常量时，JVM会检查字符串常量池中是否存在这个字符串
+        //若字符串常量池中存在该字符串，则直接返回引用实例；若不存在，先实例化该字符串
         System.out.println (str==str1);// false
 
         String str2 = new String ("Hello World");
         System.out.println (str==str2);// false
+    }
 
+### Integer和int的比较
+     public static void main(String[] args){
         int i = 200;
         Integer j = 200;
         Integer j1 = 200;
         System.out.println (i==j);// true
         System.out.println (j==j1);// false
+        //Integer包装类型的数值和int基本数据类型的数值进行比较时
+        //会自动拆为int，然后进行比较，实际上就变为两个int类型的数值的比较
+        
     }
+
 
