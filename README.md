@@ -51,8 +51,8 @@
         Integer j1 = 200;
         System.out.println (j==j1);// false
         
-        //Integer i5 = 数值;时，会被翻译成Integer i5 = Integer.valueOf(数值);
-        //Integer执行valueOf()方法时，会对-128到127之间的数进行缓存
+        //Integer j = 数值;时，会被翻译成Integer j = Integer.valueOf(数值);
+        //而Integer执行valueOf()方法时，会对-128到127之间的数进行缓存
         //Integer i = 127时，会将127进行缓存，下次再写Integer i2 = 127时，就会直接从缓存中取，就不会new一个新对象
     }
 
